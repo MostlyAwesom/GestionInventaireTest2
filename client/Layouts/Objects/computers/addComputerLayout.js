@@ -4,14 +4,14 @@ Template.addComputerLayout.events({
 		
 		var name = $("input[name='name']").val();
 		var brandId = $("select[name='brandId']").val();
-		var model = $("select[name='model']").val();
+		var modelId = $("select[name='modelId']").val();
 		var intermediateDate = new Date().now;
 		var currentDate = moment(intermediateDate).format('HH:mm - DD.MM.YYYY');
 		
 		var computer = {
 				name: name,
 				brandId: brandId,
-				model: model,
+				modelId: modelId,
 				createdAt: currentDate
 		}
         

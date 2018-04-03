@@ -7,5 +7,9 @@ Template.showComputersLayout.events({
 Template.showComputersLayout.helpers({
     brand() {
         return Brands.findOne(this.brandId);
+    },
+    model() {
+        return Models.findOne(this.modelId); 
     }
 });
+
