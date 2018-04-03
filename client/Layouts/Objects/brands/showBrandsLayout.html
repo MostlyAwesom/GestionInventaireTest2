@@ -1,0 +1,22 @@
+<template name="showBrandsLayout">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Date de création</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each brands}}
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td>{{ createdAt }}</td>
+                        <td>
+                            <button class="btn" id="delete_btn">Supprimer</button>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+</template>

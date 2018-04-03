@@ -1,0 +1,23 @@
+<template name="addModelLayout">
+    <form>
+        <div class="form-row">
+            <label>Nom</label>
+            <input type="text" name="name" />
+        </div>
+        <div class="form-row">
+            <label>Marque</label>
+            <select name="brandId">
+                {{#each brands}}
+                    <option value="{{ _id }}">{{ name }}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-row">
+            <label>Spécifications</label>
+            <input type="text-area" name="specs" />
+        </div>
+        <div class="form-row">
+            <button type="submit">Ajouter</button>
+        </div>
+    </form>
+</template>
