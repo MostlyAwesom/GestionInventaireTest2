@@ -1,3 +1,7 @@
+Template.addComputerLayout.onCreated(function(){
+	this.brandSelect = new ReactiveVar(false);
+});
+
 Template.addComputerLayout.events({
     'submit form': function(event){
 		event.preventDefault();
@@ -18,14 +22,14 @@ Template.addComputerLayout.events({
         Computers.insert(computer);
 	},
 	'change .js-brandSelect': function(event, template){
-		this.brandSelect = new ReactiveVar($( event.target ).val());
+		template.brandSelect.set( $( event.target ).val() );
 		console.log("The brand select element changed to " + this.brandSelect);
 	}
 });
 
 Template.addComputerLayout.helpers({
-	modelFromBrand(){
-        return Models.find({brandId: this.brandSelect});
-    }
+	brandSelect: function() {
+		return Template.instance().brandSelect.get();
+	}
 }); 
     
