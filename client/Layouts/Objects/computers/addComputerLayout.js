@@ -16,11 +16,15 @@ Template.addComputerLayout.events({
 		}
         
         Computers.insert(computer);
+	},
+	'click #brandSelect': function(){
+		console.log("The brand select element changed !");
 	}
 });
 
-/*Template.addComputersLayout.helpers({
-    modelFromSpecificBrand() {
-        return Models.findOne({brandId: this.brandId});
+Template.addComputerLayout.helpers({
+	modelFromBrand(){
+        return Models.find({brandId: this.brandId});
     }
-});*/
+});
+    

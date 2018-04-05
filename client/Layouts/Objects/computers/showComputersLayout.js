@@ -10,9 +10,6 @@ Template.showComputersLayout.helpers({
     },
     model() {
         return Models.findOne(this.modelId); 
-    },
-    modelFromBrand(){
-        return Models.find({brandId: this.brandId});
     }
 });
 
