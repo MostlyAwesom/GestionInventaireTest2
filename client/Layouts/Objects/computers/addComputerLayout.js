@@ -17,8 +17,8 @@ Template.addComputerLayout.events({
         
         Computers.insert(computer);
 	},
-	'click #brandSelect': function(){
-		console.log("The brand select element changed !");
+	'change .js-brandSelect': function(e){
+		console.log("The brand select element changed to ");
 	}
 });
 
@@ -26,5 +26,5 @@ Template.addComputerLayout.helpers({
 	modelFromBrand(){
         return Models.find({brandId: this.brandId});
     }
-});
+}); 
     

@@ -6,7 +6,7 @@
             </div>
             <div class="form-row">
                 <label>Marque</label>
-                <select name="brandId">
+                <select data-action="selectBrand" name="brandId">
                     {{#each brands}}
                         <option value="{{ _id }}">{{ name }}</option>
                     {{/each}}
@@ -14,7 +14,7 @@
             </div>
             <div class="form-row">
                 <label>Modèle</label>
-                <select name="modelId">
+                <select id="modelSelect" name="modelId">
                     {{#each models}}
                         <option value="{{ _id }}">{{ modelFromBrand.name }}</option>
                     {{/each}}
