@@ -1,6 +1,6 @@
 Template.addComputerLayout.events({
-    'submit form': function(e){
-		e.preventDefault();
+    'submit form': function(event){
+		event.preventDefault();
 		
 		var name = $("input[name='name']").val();
 		var brandId = $("select[name='brandId']").val();
@@ -17,14 +17,15 @@ Template.addComputerLayout.events({
         
         Computers.insert(computer);
 	},
-	'change .js-brandSelect': function(e){
-		console.log("The brand select element changed to ");
+	'change .js-brandSelect': function(event, template){
+		this.brandSelect = new ReactiveVar($( event.target ).val());
+		console.log("The brand select element changed to " + this.brandSelect);
 	}
 });
 
 Template.addComputerLayout.helpers({
 	modelFromBrand(){
-        return Models.find({brandId: this.brandId});
+        return Models.find({brandId: this.brandSelect});
     }
 }); 
     
