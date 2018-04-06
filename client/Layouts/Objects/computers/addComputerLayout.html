@@ -15,8 +15,10 @@
             <div class="form-row">
                 <label>Modèle</label>
                 <select id="modelSelect" name="modelId">
-                    {{#each models}}
-                        <option value="{{ _id }}">{{ modelFromBrand.name }}</option>
+                    {{#each model in models}}
+                        {{#if checkBrand (model)}}
+                            <option value="{{ model._id }}">{{ model.name }}</option>
+                        {{/if}}
                     {{/each}}
                 </select>
             </div>
