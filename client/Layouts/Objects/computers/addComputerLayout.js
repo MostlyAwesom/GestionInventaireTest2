@@ -35,11 +35,13 @@ Template.addComputerLayout.helpers({
 	},
 	checkBrand: function(currentModel){
 		console.log(currentModel.brandId);
-		console.log(Template.instance().getSelectedBrandId);
+		//console.log(Template.instance().getSelectedBrandId);
 		
 		if(Template.instance().getSelectedBrandId === currentModel.brandId){
+			console.log("true");
 			return true
 		} else {
+			console.log("false");
 			return false
 		}
 	}
