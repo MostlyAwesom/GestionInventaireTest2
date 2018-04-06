@@ -22,7 +22,7 @@ shell-server@0.3.1            # Server-side component of the `meteor shell` comm
 
 iron:router
 #coursierprive:tether         # Only if bootstrap > 4.x.x
-twbs:bootstrap@3.3.6
+#twbs:bootstrap@3.3.6
 
 meteortoys:allthings
 
