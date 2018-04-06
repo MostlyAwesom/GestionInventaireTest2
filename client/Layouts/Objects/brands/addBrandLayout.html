@@ -1,11 +1,9 @@
 <template name="addBrandLayout">
-        <form>
+        <form class="form-inline">
             <div class="form-row">
-                <label>Nom</label>
-                <input type="text" name="name" />
-            </div>
-            <div class="form-row">
-                <button type="submit">Ajouter</button>
+                <label for="nameInput">Nom</label>
+                <input class="form-control" type="text" id="nameInput" name="name" />
+                <button class="btn btn-primary" type="submit">Ajouter</button>
             </div>
         </form>
 </template>

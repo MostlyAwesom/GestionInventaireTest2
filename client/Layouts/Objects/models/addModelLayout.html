@@ -1,23 +1,23 @@
 <template name="addModelLayout">
     <form>
         <div class="form-row">
-            <label>Nom</label>
-            <input type="text" name="name" />
+            <label for="nameInput">Nom</label>
+            <input class="form-control" type="text" id="nameInput" name="name" />
         </div>
         <div class="form-row">
-            <label>Marque</label>
-            <select name="brandId">
+            <label for="brandSelect">Marque</label>
+            <select class="form-control" id="brandSelect" name="brandId">
                 {{#each brands}}
                     <option value="{{ _id }}">{{ name }}</option>
                 {{/each}}
             </select>
         </div>
         <div class="form-row">
-            <label>Spécifications</label>
-            <input type="text-area" name="specs" />
+            <label for="specInput">Spécifications</label>
+            <input class="form-control" id="specInput" type="text-area" name="specs" />
         </div>
         <div class="form-row">
-            <button type="submit">Ajouter</button>
+            <button class="btn btn-primary" type="submit">Ajouter</button>
         </div>
     </form>
 </template>
