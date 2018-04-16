@@ -1,9 +1,3 @@
-import { ReactiveVar } from 'meteor/reactive-var'
-
-Template.addComputerLayout.onCreated(function(){
-	this.selectedBrandId = new ReactiveVar();
-});
-
 Template.addComputerLayout.events({
     'submit form': function(event){
 		event.preventDefault();
@@ -23,25 +17,16 @@ Template.addComputerLayout.events({
         
         Computers.insert(computer);
 	},
-	'change .js-brandSelect': function(event, template){
-		template.selectedBrandId.set( $( event.target ).val() );
-		console.log($( event.target ).val());
+	'change #js-brandSelect': function(event, template){
+		Session.set('selectedBrand', $( event.target ).val());
 	}
 });
 
 Template.addComputerLayout.helpers({
-	getSelectedBrandId: function() {
-		return Template.instance().selectedBrandId.get();
-	},
 	checkBrand: function(currentModel){
-		console.log(currentModel.brandId);
-		//console.log(Template.instance().getSelectedBrandId);
-		
-		if(Template.instance().getSelectedBrandId === currentModel.brandId){
-			console.log("true");
+		if(Session.get('selectedBrand') === currentModel.brandId){
 			return true
 		} else {
-			console.log("false");
 			return false
 		}
 	}
