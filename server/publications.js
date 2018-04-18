@@ -9,3 +9,10 @@ Meteor.publish("allBrands", function(){
 Meteor.publish("allModels", function(){
     return Models.find();
 });
+
+Meteor.publish("specificComputer", function(currentId){
+    return Computers.findOne({
+        _id: currentId
+    });
+    
+});

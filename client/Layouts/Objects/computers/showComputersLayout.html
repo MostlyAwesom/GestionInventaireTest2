@@ -17,6 +17,7 @@
                         <td>{{ model.name }}</td>
                         <td>{{ createdAt }}</td>
                         <td>
+                            <a href="{{pathFor route='ComputerUpdate'}}"><button class="btn btn-outline-success" id="update_btn">Modifier</button></a>
                             <button class="btn btn-outline-danger" id="delete_btn">Supprimer</button>
                         </td>
                     </tr>
