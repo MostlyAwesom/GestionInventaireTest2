@@ -10,9 +10,9 @@ Meteor.publish("allModels", function(){
     return Models.find();
 });
 
-Meteor.publish("specificComputer", function(currentId){
+Meteor.publish("specificComputer", function(id){
     return Computers.findOne({
-        _id: currentId
+        _id: id
     });
     
 });
